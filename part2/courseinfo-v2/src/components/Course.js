@@ -27,7 +27,6 @@ const Total = ({ course }) => {
     ) 
 }
 
-
 const Course = ({ course }) => {
     return (
         <div>
