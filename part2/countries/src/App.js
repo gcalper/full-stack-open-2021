@@ -7,18 +7,16 @@ const App = () => {
   
   const [ countries, setCountries ] = useState([])
   const [ filter, setFilter ] = useState("")
-  
-  
-    
 
   const countriesToShow = filter
-    ? countries.filter(country => country.name.toLowerCase().includes(filter.toLowerCase()))
+    ? countries.filter(country => country.name.common.toLowerCase().includes(filter.toLowerCase()))
     : []
     
   useEffect( () => {
     axios
-      .get("https://restcountries.eu/rest/v2/all")
+      .get("https://restcountries.com/v3.1/all")
       .then(response => {
+        console.log(response.data)
         setCountries(response.data)
       })
   }, [])

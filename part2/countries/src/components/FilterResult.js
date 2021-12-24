@@ -13,7 +13,11 @@ const FilterResult = ({ countriesToShow, handleClick }) => {
     } else {
         return (
             <div>
-                {countriesToShow.map(country => <Country key={country.numericCode} country={country} handleClick={handleClick} />)}
+                {countriesToShow.map((country, i) =>
+                    <Country
+                        key={i}
+                        country={country}
+                        handleClick={handleClick} />)}
             </div>
     )}
 }
